@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Sean O'Donohue"]
   spec.email         = ["sean.odonohue@detroitlabs.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = "A Twitter bot scraping Reddit and Twitter."
+  spec.description   = "A configurable Markov bot that scrapes from Twitter and Reddit to produce garbage to post on Twitter."
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 
@@ -30,7 +30,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.13"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "bundler",      "~> 1.13"
+  spec.add_development_dependency "rake",         "~> 10.0"
+  spec.add_development_dependency "rspec",        "~> 3.0"
+  spec.add_runtime_dependency     "marky_markov", "~> 0.3.5"
+  spec.add_runtime_dependency     "redd",         "~> 0.7.10"
+  spec.add_runtime_dependency     "twitter",      "~> 6.1.0"
+
 end
