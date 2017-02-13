@@ -5,6 +5,7 @@ require "worst/bot"
 require "worst/markov"
 require "worst/reddit-client"
 require "worst/twitter-client"
+require "worst/scrambler"
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -16,10 +17,11 @@ require "worst/twitter-client"
 # require "irb"
 # IRB.start
 
-twitter = Worst::Bot::TwitterClient.new
-reddit  = Worst::Bot::RedditClient.new
-bot     = Worst::Bot::BotRunner.new(twitter, reddit)
-markov  = Worst::Bot::Markov.new
+twitter   = Worst::Bot::TwitterClient.new
+reddit    = Worst::Bot::RedditClient.new
+bot       = Worst::Bot::BotRunner.new(twitter, reddit)
+markov    = Worst::Bot::Markov.new
+scrambler = Worst::Bot::Scrambler
 
 sources = [
   bot.get_twitter_sources,
@@ -32,10 +34,10 @@ sources.each do |s|
 end
 
 begin
-  nonsense = markov.get_sentence_from_dict 1
+  nonsense = scrambler.scramble(markov.get_sentence_from_dict 1)
   bot.send(nonsense)
 rescue
-  nonsense = markov.get_sentence_from_dict 1
+  nonsense = scrambler.scramble(markov.get_sentence_from_dict 1)
   bot.send(nonsense)
 end
 
