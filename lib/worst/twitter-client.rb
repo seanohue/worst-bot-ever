@@ -16,7 +16,11 @@ module Worst
       end
 
       def send(msg)
-        @client.update(msg)
+        if ENV["TESTING"] != "true" then
+          @client.update(msg)
+        else
+          puts("Testing...");
+        end
         puts("Tweeted: '#{msg}'")
       end
 
