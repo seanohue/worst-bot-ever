@@ -17,9 +17,9 @@ require "worst/twitter-client"
 # IRB.start
 
 twitter = Worst::Bot::TwitterClient.new
-reddit = Worst::Bot::RedditClient.new
-bot = Worst::Bot::BotRunner.new(twitter, reddit)
-markov = Worst::Bot::Markov.new
+reddit  = Worst::Bot::RedditClient.new
+bot     = Worst::Bot::BotRunner.new(twitter, reddit)
+markov  = Worst::Bot::Markov.new
 
 sources = [
   bot.get_twitter_sources,
@@ -32,7 +32,7 @@ sources.each do |s|
 end
 
 begin
-  nonsense = markov.get_sentence_from_dict 2
+  nonsense = markov.get_sentence_from_dict 1
   bot.send(nonsense)
 rescue
   nonsense = markov.get_sentence_from_dict 1
