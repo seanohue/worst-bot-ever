@@ -10,7 +10,8 @@ module Worst
         "you" => "u",
         "the" => "teh",
         "about" => "abuot",
-        "gamedev" => "gaem maker person"
+        "gamedev" => "gaem maker person",
+        "great" => "grate"
       }
 
       def self.scramble(str)
