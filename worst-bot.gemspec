@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "A Twitter bot scraping Reddit and Twitter."
   spec.description   = "A configurable Markov bot that scrapes from Twitter and Reddit to produce garbage to post on Twitter."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/seanohue/worst-bot-ever"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

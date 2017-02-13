@@ -1,5 +1,6 @@
 require "worst/bot/version"
 
+#TODO: Make it so it is not a weird nested module thing.
 module Worst
   module Bot
     class BotRunner
@@ -43,7 +44,7 @@ module Worst
       end
 
       def get_reddit_sources()
-        @@subreddit_sources 
+        @@subreddit_sources
           .map { |subreddit| @reddit.get_hot_posts(subreddit) }
           .flatten
       end
